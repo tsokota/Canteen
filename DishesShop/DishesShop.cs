@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using DishesKitchenNS;
 using DishNS;
+using LogSysNS;
 
 namespace DishesShopNS
 {
@@ -31,7 +32,7 @@ namespace DishesShopNS
             lock (_dishes)
             {
                 _dishes.Enqueue(args.DishToAdd);
-                //Console.WriteLine(args.DishToAdd.Name+" поступило в продажу с кухни!");
+                LogSys.WriteToLogFile(args.DishToAdd.Name + " поступило в продажу с кухни!");
             }
         }
 
@@ -42,7 +43,7 @@ namespace DishesShopNS
                 Console.WriteLine("В наличии: ");
                 foreach (var p in _dishes)
                 {
-                    Console.WriteLine("   "+p.Name);
+                    Console.WriteLine("   " + p.Name);
                 }
             }
         }
@@ -57,7 +58,7 @@ namespace DishesShopNS
                     int Id = i;
                     if (token.IsCancellationRequested)
                     {
-                        Console.WriteLine("Работа ресторана остановлена!");
+                        LogSys.WriteToLogFile("Работа ресторана остановлена!");
                         return;
                     }
 
@@ -71,16 +72,16 @@ namespace DishesShopNS
                                 Dish dishToSell = _dishes.Dequeue();
                                 if ((DishesKitchen.TotalDate - dishToSell.Cooked).Days >= dishToSell.ShelfLife)
                                 {
-                                    //Console.WriteLine(dishToSell.Name + " просрочен и будет выброшен!");
+                                    LogSys.WriteToLogFile(dishToSell.Name + " просрочен и будет выброшен!");
                                 }
                                 else
                                 {
-                                    //Console.WriteLine(dishToSell.Name + " продан!");
+                                    LogSys.WriteToLogFile(dishToSell.Name + $" продан посетителю №{Id}!");
                                 }
                             }
                             catch (Exception ex)
                             {
-                                //Console.WriteLine("Нету блюд к продаже!");
+                                LogSys.WriteToLogFile("Нету блюд к продаже!");
                             }
 
                         }
@@ -89,7 +90,5 @@ namespace DishesShopNS
                 Task.WaitAll(tasks);
             }
         }
-
-
     }
 }

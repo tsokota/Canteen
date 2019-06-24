@@ -53,6 +53,10 @@
       <Project>{04019864-f9cc-48e8-8aac-d54a0d1a6a82}</Project>
       <Name>DishNS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LogSysNS\LogSysNS.csproj">
+      <Project>{98ed3055-8eaa-491d-a1a9-a2dccbf99559}</Project>
+      <Name>LogSysNS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

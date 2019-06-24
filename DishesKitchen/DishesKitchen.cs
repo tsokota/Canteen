@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using DishNS;
+using LogSysNS;
 
 namespace DishesKitchenNS
 {
@@ -37,10 +38,10 @@ namespace DishesKitchenNS
                     int Id = i;
                     if (token.IsCancellationRequested)
                     {
-                        Console.WriteLine("Работа кухни остановлена!");
+                        LogSys.WriteToLogFile("Работа кухни остановлена!");
                         return;
                     }
-                   
+
                     tasks[Id] = Task.Run(() =>
                     {
                         Thread.Sleep(1000 + Id * 50);

@@ -21,6 +21,8 @@ namespace Canteen
         static void Main(string[] args)
         {
             _shop.CountOfClients = GetInt("Введите к-во посетителей в ресторане: ");
+            _kitchen.CountOfMenu = GetInt("Введите к-во производимых меню в сутки на кухне: ");
+
             StartAllProcess();
 
             ShowMenu();
@@ -30,9 +32,9 @@ namespace Canteen
 
         public static void ShowMenu()
         {
-            while(true)
+            while (true)
             {
-               switch(GetInt("\n<0> - Выйти\n<1> - Показать блюда в наличии\n"))
+                switch (GetInt("\n<0> - Выйти\n<1> - Показать блюда в наличии\n"))
                 {
                     case 0:
                         cancellationTokenSource.Cancel();

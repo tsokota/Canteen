@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DishesShopNS", "DishesShop\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DishesKitchenNS", "DishesKitchen\DishesKitchenNS.csproj", "{1FDAA759-1A38-4357-B40A-FDCB246C0DC7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogSysNS", "LogSysNS\LogSysNS.csproj", "{98ED3055-8EAA-491D-A1A9-A2DCCBF99559}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1FDAA759-1A38-4357-B40A-FDCB246C0DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FDAA759-1A38-4357-B40A-FDCB246C0DC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FDAA759-1A38-4357-B40A-FDCB246C0DC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98ED3055-8EAA-491D-A1A9-A2DCCBF99559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98ED3055-8EAA-491D-A1A9-A2DCCBF99559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98ED3055-8EAA-491D-A1A9-A2DCCBF99559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98ED3055-8EAA-491D-A1A9-A2DCCBF99559}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

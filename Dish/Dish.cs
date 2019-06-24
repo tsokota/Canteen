@@ -12,11 +12,11 @@ namespace DishNS
 
         public decimal Price { get; set; }
 
-        public DateTime Cooked { get;}
+        public DateTime Cooked { get; }
 
-        public abstract int ShelfLife {get;}
+        public abstract int ShelfLife { get; }
 
-        public Dish( string name,DateTime cooked)
+        public Dish(string name, DateTime cooked)
         {
             Name = name;
             Cooked = cooked;
